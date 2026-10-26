@@ -1,0 +1,9 @@
+# Herkunft und Beleggrenzen
+
+Alle Python-Dateien, JSON-Fixtures und Dokumentationstexte dieses Kandidaten wurden für diese Demo neu und mit KI-Unterstützung erstellt. Der Lizenztext stammt aus der offiziellen MIT-Vorlage; ausschließlich Jahr und Name wurden ersetzt. Keine private Implementierung, Historie, Konfiguration, Datenprobe oder fremde Code-Datei wurde übernommen. Konzeptuelle Anforderungen: Inhalt vor Ausführung binden, bei fehlender Freigabe stoppen, Belege und Entscheidung trennen. Das sind generische Kontrollideen, keine Offenlegung eines proprietären Vertrags.
+
+Es werden ausschließlich Module der Python-Standardbibliothek importiert. Keine installierten Drittanbieterpakete, SDKs, Datenbanken, Transitivabhängigkeiten, externen Bilder, Logos, Schriftarten oder fremden Datensätze sind enthalten. Die Python-Laufzeit selbst ist eine externe Systemvoraussetzung und wird nicht mitgeliefert.
+
+Die Tests belegen ausschließlich die konkret geprüften synthetischen Fälle dieser Codefassung. Sie belegen weder manuelle unabhängige Programmierkompetenz noch Kundenresultate, Umsatz, autonome Vollfunktion oder Betriebssicherheit anderer Systeme. Keine ursprüngliche Schema-Kompatibilität, echte Agent-Anbindung oder Live-Vertriebsintegration wird behauptet.
+
+KI-Erzeugung ersetzt keine Rechteprüfung. Der Operator hat nach seinem Kenntnisstand bestätigt, dass ihm keine entgegenstehenden Rechte Dritter bekannt sind, und die [MIT-Lizenz](../LICENSE) für die neu erstellten Inhalte dieses Demo-Repositories gewählt. Dies umfasst keine privaten Vorlagen oder externen verlinkten Quellen. Für den getrennten Profiltext wurde keine separate Open-Source-Lizenz gewählt. Die Operatorerklärung beweist keine juristisch geprüfte Urheberrechtsfreiheit oder weltweite Unabhängigkeit von unbekannten Werken. Öffentliche Inhalte und jede externe Aktion benötigen weiterhin eine separate menschliche Freigabe.

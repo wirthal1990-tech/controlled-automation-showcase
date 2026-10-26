@@ -1,0 +1,21 @@
+{
+  "complete": {
+    "object": "EXAMPLE_ORG_A",
+    "evidence": [
+      {"id": "EVIDENCE_A", "criterion": "format_checked", "observed": true},
+      {"id": "EVIDENCE_B", "criterion": "review_note_present", "observed": true}
+    ]
+  },
+  "missing": {
+    "object": "EXAMPLE_ORG_A",
+    "evidence": [{"id": "EVIDENCE_A", "criterion": "format_checked", "observed": true}]
+  },
+  "contradiction": {
+    "object": "EXAMPLE_ORG_A",
+    "evidence": [
+      {"id": "EVIDENCE_A", "criterion": "format_checked", "observed": true},
+      {"id": "EVIDENCE_B", "criterion": "review_note_present", "observed": true},
+      {"id": "EVIDENCE_C", "criterion": "format_checked", "observed": false}
+    ]
+  }
+}

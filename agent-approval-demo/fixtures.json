@@ -1,0 +1,5 @@
+{
+  "request": {"action": "write_report", "report": "SYNTHETIC_REPORT_A", "text": "synthetic report"},
+  "approval": {"approval_id": "APPROVAL_A", "request_sha256": "cab4fd57fb3001f14c95ea44255f1a6ab97453a3a01b14fc3caff6d7dc7b49a6", "decision": "APPROVED", "expires_at": 200},
+  "now": 100
+}
