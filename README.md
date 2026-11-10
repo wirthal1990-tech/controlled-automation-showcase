@@ -1,37 +1,39 @@
-# Controlled automation showcase
+# Controlled Automation Showcase
 
-Zwei kleine, eigenständig neu erstellte Offline-Demos: **Control before action** und **Evidence before go**. Sämtliche Eingaben sind synthetisch. Die Demo-Implementierungen enthalten keine Netzwerkaufrufe, Provider oder Hooks für Betriebssystem-Befehle. Keine echten Geschäftsdaten. Simulierte Aktionen verändern nur Python-Objekte im Arbeitsspeicher. Die Tests starten ausschließlich die mitgelieferten Python-Demos als Unterprozesse.
+Zwei kleine Python-Beispiele zeigen, wie ich Freigaben und Belege vor einer technischen Aktion prüfbar mache. **Beide Demos sind veröffentlicht, vollständig synthetisch und lokal ausführbar.** Sie greifen nicht auf private Projekte, Netzwerke oder echte Geschäftsdaten zu.
 
-Dieses Paket ist ein lokaler Veröffentlichungsvorschlag (`PROPOSED`). Die Code-Erstellung war KI-gestützt. Es ist keine ursprüngliche Implementierung eines privaten Systems und bietet keine Schema-Kompatibilität zu anderen Projekten.
+## Die beiden Beispiele
 
-## Start in drei Schritten
+**[Control before action](agent-approval-demo/README.md)** – Eine simulierte Freigabe gilt nur für den gebundenen Inhalt. Manipulation, Ablauf und Wiederholung führen zur Verweigerung. Die Aktion verändert ausschließlich ein Python-Objekt im Arbeitsspeicher.
 
-1. Python 3.11 oder neuer bereitstellen; keine Pakete installieren. Lokal verifiziert wurde Python 3.14.8. Zusätzlich dokumentiert der Operator eine frühere unabhängige Reproduktion unter Python 3.13.5; diese wurde hier nicht neu ausgeführt. Weitere Versionen sind `NOT_TESTED`.
-2. Im Hauptverzeichnis dieses Pakets beide Testsuiten ausführen:
+**[Evidence before go](revops-evidence-demo/README.md)** – Fehlende oder widersprüchliche Belege führen zu `NO_GO`. Vollständige Belege ermöglichen eine anschließende Prüfung, aber noch keine Freigabe. Eine zusätzliche, an dieselben Daten gebundene simulierte Zustimmung ist nötig.
+
+## Lokal ausprobieren
+
+Benötigt wird Python ab Version 3.11; zusätzliche Pakete werden nicht installiert.
+
+- **Frühere Prüfung (historisch dokumentiert):** Tests erfolgreich mit Python 3.14.8; die 16 Agent- und 17 Evidence-Tests unabhängig reproduziert mit Python 3.13.5.
+- **Erneute Prüfung am 10.11.2026:** dieselben 16 + 17 Tests erfolgreich mit Python 3.14.10 auf dem aktuellen Code.
+
+Daraus folgt keine bestätigte Kompatibilität für andere Versionen.
 
 ```sh
 python3 -B -m unittest discover -s agent-approval-demo -p 'test_*.py' -v
 python3 -B -m unittest discover -s revops-evidence-demo -p 'test_*.py' -v
-```
-
-3. Die [Agent-Demo](agent-approval-demo/README.md) und [Evidence-Demo](revops-evidence-demo/README.md) einzeln ausprobieren:
-
-```sh
 python3 -B agent-approval-demo/demo.py approved
 python3 -B revops-evidence-demo/demo.py review
 ```
 
-Die Tests laufen in getrennten Prozessen, weil beide Teilverzeichnisse ein eigenes `demo.py` enthalten. Die Suiten testen auch die Kommandozeilenprogramme mit tatsächlichen Unterprozessen.
+Die Befehle im Root dieses Repositories ausführen. **33 Testmethoden** prüfen unter anderem erlaubte und verweigerte Aktionen. Negative CLI-Szenarien geben absichtlich einen anderen Exit-Code zurück – siehe [Reproduktion](docs/REPRODUCTION.md).
 
-## Welche Grenze demonstriert wird
+## Was die Demos belegen – und was nicht
 
-- Agent-Demo: Der SHA-256-Hash bindet den Inhalt einer Anfrage an eine ausdrückliche Entscheidung. Ohne passende, gültige und unverbrauchte Freigabe keine simulierte Aktion.
-- Evidence-Demo: Fehlende, negative oder widersprüchliche Belege bedeuten `NO_GO`. Ein technischer Demo-Score hebt das niemals auf. Vollständige Belege erlauben nur menschliche Prüfung; eine separate Freigabe bindet sich an exakt dieselben Eingaben.
+Die Beispiele machen Eingabevalidierung, Inhaltsbindung, Ablehnung unsicherer Zustände und nachvollziehbare Testfälle sichtbar. Sie sind **keine produktive Agent-Integration**. Die Freigaben stammen aus synthetischen Testdaten; es gibt weder Identitätsprüfung noch Signaturen, dauerhafte Wiederholungssperre, Transaktionssicherheit oder produktive Sicherheitsgarantie. Ein neuer Prozess beginnt mit leerem Speicher.
 
-Freigaben in Fixtures sind **geskriptete Beispieldaten**. Niemand wird dadurch authentifiziert. Ein Hash beweist gleiche Inhalte, keine menschliche Identität oder Berechtigung. Keine signierten Entscheidungen, dauerhafte Wiederholungssperre, Nebenläufigkeit, echte Integration oder produktive Sicherheitsgarantie. Ein Neustart erzeugt einen neuen, leeren Simulator.
+Der Code und die Texte wurden neu mit KI-Unterstützung erstellt. Die Beispiele demonstrieren technische Prüflogik und QA – nicht die tatsächliche Laufzeit oder eine kommerzielle Leistung privater AgentOS-/RevOps-Systeme.
 
-[Reproduktion und Exit-Codes](docs/REPRODUCTION.md) · [Herkunft und Grenzen](docs/SOURCES_AND_LIMITS.md) · [Sicherheits- und Lizenzprüfung](docs/SECURITY_LICENSE_REVIEW.md)
+[**Technische Herkunft und Grenzen**](docs/SOURCES_AND_LIMITS.md) · [**Sicherheits- und Lizenzprüfung**](docs/SECURITY_LICENSE_REVIEW.md) · [**Tests und Exit-Codes**](docs/REPRODUCTION.md)
 
-## Lizenz und Rechtegrenze
+## Lizenz
 
-Die neu erstellten Inhalte dieses Demo-Repositories stehen gemäß der dokumentierten Operatorentscheidung unter der [MIT-Lizenz](LICENSE), Copyright (c) 2026 Alexander Wirth. Der Operator bestätigt nach seinem Kenntnisstand, dass ihm keine entgegenstehenden Rechte Dritter bekannt sind. Diese Erklärung ist keine juristisch geprüfte Urheberrechtsfreiheit und keine Veröffentlichungsfreigabe. Die MIT-Lizenz erfasst ausschließlich die neu erstellten Showcase-Inhalte dieses Demo-Repositories, keine privaten Vorlagen oder externen verlinkten Quellen. Für den getrennten Profiltext wurde keine separate Open-Source-Lizenz gewählt. Der Kandidat bleibt lokal; Veröffentlichung erfordert eine eigene Freigabe.
+Die neu erstellten Inhalte dieses Repositories stehen unter der [MIT-Lizenz](LICENSE), Copyright (c) 2026 Alexander Wirth. Die verlinkten externen Datenquellen und die privaten Original-Repositories sind davon nicht umfasst.

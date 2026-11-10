@@ -1,6 +1,6 @@
 # Lokal reproduzieren
 
-1. Nur dieses vorgeschlagene Repo-Verzeichnis in ein leeres lokales Verzeichnis kopieren. Python 3.11 oder neuer verwenden. Lokal tatsächlich geprüft: Python 3.14.8. Der Operator dokumentiert zusätzlich eine frühere unabhängige Reproduktion der 16 Agent-/17 Evidence-Tests und zwölf direkten CLI-Szenarien unter Python 3.13.5. Dieser historische Nachweis wurde hier nicht neu ausgeführt; weitere Versionen `NOT_TESTED`.
+1. Dieses Repository klonen oder als Archiv herunterladen und in einem lokalen Verzeichnis öffnen. Python 3.11 oder neuer verwenden. Historisch dokumentiert: die Tests liefen lokal mit Python 3.14.8; die 16 Agent- und 17 Evidence-Tests wurden unabhängig mit Python 3.13.5 reproduziert. Getrennt davon am 10.11.2026 erneut geprüft: dieselben Tests mit Python 3.14.10 auf dem aktuellen Code. Diese Angaben betreffen die jeweils geprüften Codefassungen; andere Versionen sind nicht bestätigt.
 2. Im kopierten Hauptverzeichnis ausführen, ohne Paketinstallation:
 
 ```sh
@@ -15,4 +15,4 @@ Die Suiten führen jedes reguläre CLI-Szenario zweimal aus, vergleichen Ausgabe
 
 `-B` verhindert Python-Bytecode-Dateien. Keine Tests erzeugen Geschäftsdateien oder Netzwerkverkehr. Test-Unterprozesse starten nur die hier enthaltenen Demo-Dateien mit derselben Python-Laufzeit. Jede Testsuite in eigenem Prozess starten; keine globale Testentdeckung mit kollidierenden Modulnamen.
 
-Reproduktion ist lokale Codeprüfung, kein GitHub-Actions-Ergebnis, kein Downloadnachweis eines veröffentlichten Repos und keine Produktionsabnahme.
+Reproduktion ist lokale Codeprüfung, kein GitHub-Actions-Ergebnis, keine Produktionsabnahme und keine Garantie für andere Python-Versionen.
