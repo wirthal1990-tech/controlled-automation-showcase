@@ -1,6 +1,6 @@
 # Lokal reproduzieren
 
-1. Dieses Repository klonen oder als Archiv herunterladen und in einem lokalen Verzeichnis öffnen. Python 3.11 oder neuer verwenden. Lokal tatsächlich geprüft: Python 3.14.8 und am 10.11.2026 erneut Python 3.14.10. Zusätzlich wurden die 16 Agent- und 17 Evidence-Tests unter Python 3.13.5 unabhängig reproduziert. Diese Angaben betreffen die geprüften Codefassungen; andere Versionen sind nicht bestätigt.
+1. Dieses Repository klonen oder als Archiv herunterladen und in einem lokalen Verzeichnis öffnen. Python 3.11 oder neuer verwenden. Historisch dokumentiert: die Tests liefen lokal mit Python 3.14.8; die 16 Agent- und 17 Evidence-Tests wurden unabhängig mit Python 3.13.5 reproduziert. Getrennt davon am 10.11.2026 erneut geprüft: dieselben Tests mit Python 3.14.10 auf dem aktuellen Code. Diese Angaben betreffen die jeweils geprüften Codefassungen; andere Versionen sind nicht bestätigt.
 2. Im kopierten Hauptverzeichnis ausführen, ohne Paketinstallation:
 
 ```sh

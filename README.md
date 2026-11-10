@@ -10,7 +10,12 @@ Zwei kleine Python-Beispiele zeigen, wie ich Freigaben und Belege vor einer tech
 
 ## Lokal ausprobieren
 
-Benötigt wird Python ab Version 3.11; zusätzliche Pakete werden nicht installiert. Die Tests wurden mit Python 3.13.5, 3.14.8 und zuletzt am 10.11.2026 mit Python 3.14.10 erfolgreich ausgeführt. Daraus folgt keine bestätigte Kompatibilität für jede andere Version.
+Benötigt wird Python ab Version 3.11; zusätzliche Pakete werden nicht installiert.
+
+- **Frühere Prüfung (historisch dokumentiert):** Tests erfolgreich mit Python 3.14.8; die 16 Agent- und 17 Evidence-Tests unabhängig reproduziert mit Python 3.13.5.
+- **Erneute Prüfung am 10.11.2026:** dieselben 16 + 17 Tests erfolgreich mit Python 3.14.10 auf dem aktuellen Code.
+
+Daraus folgt keine bestätigte Kompatibilität für andere Versionen.
 
 ```sh
 python3 -B -m unittest discover -s agent-approval-demo -p 'test_*.py' -v
